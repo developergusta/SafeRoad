@@ -1,0 +1,18 @@
+{
+  "appId": "com.tagcompany.saferoad",
+  "appName": "saferoad",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "server": {
+    "allowNavigation": [
+      "localhost:8100/*"
+    ]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

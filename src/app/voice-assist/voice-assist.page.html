@@ -1,0 +1,76 @@
+<ion-header mode="md" class="ion-no-border voice-assist__header">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button
+        (click)="location.back()"
+        slot="icon-only"
+        class="voice-assist__header--back"
+        fill="clear"
+      >
+        <ion-icon name="chevron-back-sharp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="voice-assist__header--title"
+      >Pesquisa por <br />
+      Voz</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="voice-assist__content">
+  <div class="align-center">
+    <div class="voice-assist__content__chat">
+      <div
+        *ngFor="let message of messages; let i = index"
+        [ngClass]="['messages', message.me ? 'voice-assist__content__chat--mine' : 'voice-assist__content__chat--yours']"
+      >
+        <div
+          class="voice-assist__content__chat__buttons"
+          *ngIf="message.button"
+        >
+          <ion-button
+            (click)="launchMap(button.location)"
+            class="voice-assist__content__chat__buttons--button"
+            *ngFor="let button of message.button"
+          >
+            {{button.name}}
+          </ion-button>
+        </div>
+        <div
+          *ngIf="!message.button && message.me"
+          [ngClass]="['message', messages[i+1] ? !messages[i+1].me ? 'voice-assist__content__chat--mine--last' : '' : 'voice-assist__content__chat--mine--last']"
+        >
+          {{message.text}}
+          <div *ngIf="message.loading" class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div
+          *ngIf="!message.button && !message.me"
+          [ngClass]="['message', messages[i+1] ? messages[i+1].me ? 'voice-assist__content__chat--yours--last' : '' : 'voice-assist__content__chat--yours--last']"
+        >
+          {{message.text}}
+          <div *ngIf="message.loading" class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<div class="voice-assist__footer">
+  <div
+    class="record-button"
+    (click)="toggleRecording()"
+    [ngClass]="{'record-button--recording': isRecording,'record-button--notrecording': !isRecording}"
+  >
+    <div>
+      <div></div>
+    </div>
+  </div>
+</div>

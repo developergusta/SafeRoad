@@ -1,0 +1,171 @@
+ion-slides {
+  height: 100%;
+}
+app-dash {
+  width: 100%;
+  height: 100%;
+}
+
+.homepage__content {
+  background: linear-gradient(16.15deg, #0d47a1d1 27.09%, #0d47a18f 64.13%),
+    url('../../assets/bg-saferoad.jpg') no-repeat center center / cover;
+  width: 100%;
+  height: 100%;
+  &--logo {
+    height: 182px;
+    img {
+      width: 130px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 48px;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 182px);
+    &--buttons {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+      margin: 0 30px;
+      ion-button {
+        padding-bottom: 34px;
+        --border-radius: 50px;
+        text-transform: uppercase;
+      }
+
+      &--btn-voz {
+        height: auto;
+        --background: linear-gradient(-180deg, #2f6fbf 8.4%, #287ee0 100%);
+        --box-shadow: -5px 5px 5px #1b3e98;
+
+        &--container {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+          padding: 1rem 0;
+          ion-item-divider {
+            margin-bottom: 0.3rem;
+            --color: #fff;
+            min-height: 2px !important;
+          }
+          div {
+            ion-icon {
+              font-size: 6.5rem;
+            }
+          }
+        }
+      }
+      &--btn-sos {
+        height: auto;
+        --background: linear-gradient(180deg, #da5e19 0%, #d67c49 100%);
+        --box-shadow: -5px 5px 5px rgba(175, 1, 8, 0.48);
+        &--container {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          height: 100%;
+          padding: 1rem 0;
+          ion-item-divider {
+            margin-bottom: 0.3rem;
+            --color: #fff;
+            min-height: 2px !important;
+          }
+          div {
+            ion-icon {
+              font-size: 6.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    &--footer {
+      display: flex;
+
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 1rem;
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+      &--seemore {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.47);
+        border-radius: 50px;
+      }
+      &--line {
+        height: 5px;
+        background: #fff;
+        border-radius: 50px;
+        width: 90%;
+        margin: auto;
+        margin-top: 0.8rem;
+      }
+    }
+  }
+}
+
+@media (max-height: 644px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 6rem !important;
+    }
+  }
+}
+
+@media (max-height: 620px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 5.5rem !important;
+    }
+  }
+}
+
+@media (max-height: 600px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 4.8rem !important;
+    }
+  }
+}
+
+@media (max-height: 585px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 4.5rem !important;
+    }
+  }
+}
+
+@media (max-height: 575px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 4rem !important;
+    }
+  }
+}
+
+@media (max-height: 560px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 3rem !important;
+    }
+  }
+}
+
+@media (max-height: 530px) {
+  .btn-icon {
+    ion-icon {
+      font-size: 2rem !important;
+    }
+  }
+}
